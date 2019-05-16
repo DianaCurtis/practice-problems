@@ -45,8 +45,28 @@ function fitWithinVal(inputArray, maxValue){
     return output;
 }
 
-function getAllNamesShorterThan(){
+/*
+Given an array of naems and a value, return an array of only the names shorter than the given
+value for example:
+input: ['Clyde','Sue','Jerry','Jo'],4
+return: ['Sue','Jo']
 
+use a for loop
+    grab the current value and check to see if the length is less than the maxvalue
+*/
+
+function getAllNamesShorterThan(inputArray,maxValue){
+
+    var output=[];
+    
+    for(indexArray = 0; indexArray < inputArray.length; indexArray++){
+
+        if(inputArray[indexArray].length < maxValue){
+            output.push(inputArray[indexArray]);
+        }
+    }
+
+    return output;
 }
 
 
