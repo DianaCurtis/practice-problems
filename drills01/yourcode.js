@@ -12,11 +12,38 @@ function sumArray(inputArray){
     return sum;
 }
 
+/*
+Given an array and a number, sum the array until you reach the number. 
+Keep adding any values that would total below the given value. Return an array of every number you could add.
+For example:
 
-function fitWithinVal(){
+input: ([1,100,2,4,5,6],7)
+output: [1,2,4]
+
+use a for loop that will go through the array from start to finish 
+    check to see if the current value is smaller than the max
+    if T then take out the current value in the array and add it to a new array
+        do this using splice
+    if f skip that value
+return the new array
+
+*/
+function fitWithinVal(inputArray, maxValue){
+    var output =[];
+    var sum = 0;
+
+    for(indexArray = 0; indexArray < inputArray.length; indexArray++){
+
+        sum += inputArray[indexArray];
+        if(sum <= maxValue){
+            output.push(inputArray[indexArray]);
+        }else{
+            sum -= inputArray[indexArray];
+        }
+
+    }
+    return output;
 }
-
-
 
 function getAllNamesShorterThan(){
 
