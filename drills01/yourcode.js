@@ -70,5 +70,52 @@ function getAllNamesShorterThan(inputArray,maxValue){
 }
 
 
-function makeLabel(){
-  }
+/*
+given an object with data for a person in it, generate a shipping label in the following form:
+example:
+        input: [ { "familyName": "McGee",
+                    "givenName": "Chuckles",
+                    "greeting": "Miss.",
+                    "age": 28,
+                    "height": 165,
+                    "colors": { "eye": "green",
+                                "hair": "green" },
+                    "home address": { "streetNumber": "12345",
+                                        "streetName": "Any St",
+                                        "state": "Mo",
+                                        "zip": 63102,
+                                         "city": "Kansas City" }
+                      } ]
+*/
+
+
+function makeLabel(userInput){
+    // create a variable that sill store the sentence to be output
+
+    // call the greeting
+    // call the givenName
+    // call the familyName
+    // add \n
+    // call the street number
+    // call the streetName
+    // add \n
+    // add city and comma
+    // add the state
+    // add the zip
+
+
+    // return the sentence
+
+
+    var sentence =' ';
+    sentence = userInput['greeting'] + ' '
+        + userInput['givenName'] + ' '
+        + userInput['familyName'] + '\n'
+        + userInput['home address'].streetNumber + ' '
+        + userInput['home address'].streetName + '\n'
+        + userInput['home address'].city + ', '
+        + userInput['home address'].state + ' '
+        + userInput['home address'].zip;
+
+    return sentence;
+}
