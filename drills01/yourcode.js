@@ -1,117 +1,77 @@
-
-/*
-sumArray: given an array of numbers, add up all the numbers for
-example: [1,5,3,2,6]
-returns 17
+/* 
+Given an array of numbers, add up all the numbers
+input: [1,5,3,2,6]
+output: returns 17
 */
 
-function sumArray(arrayNumbers){
-    // create a storage container for the sum of the values
-    // start from the beginning of the array and go until the end
-	        //take the current value and add it to the the sum of the previous sum
-    //end the loop
-    //return the value
-
-    var sumValue=0;
-
-    for(var index=0; index<arrayNumbers.length; index++){
-        sumValue+=arrayNumbers[index];
+function sumArray(inputArray){
+    var sum =0;
+    for(indexArray = 0; indexArray<inputArray.length;indexArray++){
+        sum += inputArray[indexArray];
     }
-    return sumValue;
+    return sum;
 }
-
-
 
 /*
-given an array and a number, sum the array until you reach the
- number. keep any values that would total below the given value
- return an array of every number you could add.
- for example:
-    input: [1,100,2,4,5,6],7
-    return: [1,2,4]
- */
+Given an array and a number, sum the array until you reach the number. 
+Keep adding any values that would total below the given value. Return an array of every number you could add.
+For example:
 
-function fitWithinVal(numArrayInput,numInput){
+input: ([1,100,2,4,5,6],7)
+output: [1,2,4]
 
-    //create output as an array
-    //store the sum
-    // store the current value
+use a for loop that will go through the array from start to finish 
+    check to see if the current value is smaller than the max
+    if T then take out the current value in the array and add it to a new array
+        do this using splice
+    if f skip that value
+return the new array
 
-    // go through the array of numbers from start to finish
+*/
+function fitWithinVal(inputArray, maxValue){
+    var output =[];
+    var sum = 0;
 
-        //check if the sum is less than the num value
-            //grab the current number from the list and compare it to the numvalue
-                // if the the current value is less than the num value add it so the some
-                    // using .push can add the value to the array output
-                 // else do nothing, we dont need to add the value to the sum
-    //end the loop
-    //return the output
+    for(indexArray = 0; indexArray < inputArray.length; indexArray++){
 
-
-    //[[4,2,3,6,7,1,8,10,9], 30]
-    var output=[];
-
-    var index=0;
-    var sumTwo=0;
-    var currentValue=numArrayInput[index];
-    var checkValue=0;
-
-
-   while(sumTwo<=numInput && numArrayInput.length>index){ //10<30
-
-       checkValue=currentValue +sumTwo; //6
-
-       if( checkValue < numInput){ //6<30
-           sumTwo+= currentValue; //10
-           output.push(currentValue); //[4,2]
-       }
-       index++; //2
-       currentValue=numArrayInput[index]; //3
-
-     //console.log(sumTwo);
-
-   }
-   return output;
-}
-
-
-/*given an array of names and a value, return an array of only the names
- shorter than the given value
-
- for example:
-        input ['Clyde','Sue','Jerry','Jo'], 4
-        return ['Sue','Jo']
-
- */
-
-
-
-function getAllNamesShorterThan(namesArray,numNamesArray){
-    //create a container for the output
-    // go through the array from start to finish
-        // get the current name
-        // get the length of the current name
-        // determine if the length of the current name is less than the number indicated
-                // F do nothing
-                // T store the value
-    //end loop
-    //return the output
-
-
-    var output=[];
-    for(var index=0; index<namesArray.length;index++){
-        var currentNameLength=namesArray[index].length;
-
-        if(currentNameLength<numNamesArray){
-            output.push(namesArray[index]);
+        sum += inputArray[indexArray];
+        if(sum <= maxValue){
+            output.push(inputArray[indexArray]);
+        }else{
+            sum -= inputArray[indexArray];
         }
+
     }
     return output;
 }
 
 /*
-given an object with data for a person in it, generate a shipping label in the following form:
+Given an array of naems and a value, return an array of only the names shorter than the given
+value for example:
+input: ['Clyde','Sue','Jerry','Jo'],4
+return: ['Sue','Jo']
 
+use a for loop
+    grab the current value and check to see if the length is less than the maxvalue
+*/
+
+function getAllNamesShorterThan(inputArray,maxValue){
+
+    var output=[];
+    
+    for(indexArray = 0; indexArray < inputArray.length; indexArray++){
+
+        if(inputArray[indexArray].length < maxValue){
+            output.push(inputArray[indexArray]);
+        }
+    }
+
+    return output;
+}
+
+
+/*
+given an object with data for a person in it, generate a shipping label in the following form:
 example:
         input: [ { "familyName": "McGee",
                     "givenName": "Chuckles",
@@ -126,8 +86,6 @@ example:
                                         "zip": 63102,
                                          "city": "Kansas City" }
                       } ]
-
-
 */
 
 
