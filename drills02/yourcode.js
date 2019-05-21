@@ -46,7 +46,46 @@ function wordLengths(secondArray){
     return countArray;
 }
 
-function getMinMaxMean(){
+/* 
+Given an array of numbers, get the minimum, maximum, and mean numbers. Return them as an object. Mean is another word for average 
+input [3,1,9,12,4]
+return {min: 1, max:12,mean:25.8}
+
+create an object that contains the min, max, and mean but are null values
+make the first value be the max and min 
+using a for loop go through the array from start to finish 
+    check to see if the current value is smaller than the current min
+        T then replace
+        F do nothing
+    check to see if the current value is greater than the current max
+        T then replace
+        F do nothing
+
+    create a sum and avg variable
+    find the sum by adding up the values in the array and take the sum and divide by the length of the array
+    
+*/
+
+
+function getMinMaxMean(thirdArray){
+    let output = {
+        min: thirdArray[1],
+        max: thirdArray[1],
+        mean: 0
+    }
+
+
+    for(thirdIndex = 1; thirdIndex < thirdArray.length; thirdArray++){
+        if (output[min]>thirdArray[thirdIndex]){
+            output[min] = thirdArray[thirdIndex];
+        }
+
+        if(outout[max]<thirdArray[thirdIndex]){
+            output[max] = thirdArray[thirdIndex];
+        }
+    }
+
+    return output;
 
 }
 
