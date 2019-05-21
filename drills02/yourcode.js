@@ -68,6 +68,7 @@ using a for loop go through the array from start to finish
 
 
 function getMinMaxMean(thirdArray){
+    let sum = 0;
     let output = {
         min: thirdArray[1],
         max: thirdArray[1],
@@ -83,7 +84,11 @@ function getMinMaxMean(thirdArray){
         if(outout[max]<thirdArray[thirdIndex]){
             output[max] = thirdArray[thirdIndex];
         }
+
+        sum+=thirdArray[thirdIndex];
     }
+
+    output[mean] =sum/thirdArray.length;
 
     return output;
 
