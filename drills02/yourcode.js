@@ -15,7 +15,7 @@ go through the array from start to finish in a for loop
 
 function countOccurences(firstArray,searchWord){
     let count = 0;
-    for(firstIndex=0;firstIndex<firstArray.length;firstIndex++){
+    for(let firstIndex=0;firstIndex<firstArray.length;firstIndex++){
         if(firstArray[firstIndex] == searchWord){
             count++;
         }
@@ -40,7 +40,7 @@ function countOccurences(firstArray,searchWord){
 
 function wordLengths(secondArray){
     let countArray=[];
-    for(secondIndex = 0; secondIndex<secondArray.length; secondIndex++){
+    for(let secondIndex = 0; secondIndex<secondArray.length; secondIndex++){
         countArray.push(secondArray[secondIndex].length);
     }
     return countArray;
@@ -67,35 +67,42 @@ using a for loop go through the array from start to finish
 */
 
 
+
 function getMinMaxMean(thirdArray){
-    let sum = 0;
-    let output = {
-        'min': thirdArray[0],
-        'max': thirdArray[0],
-        'mean': 0
-    }
+
+    let sum = thirdArray[0];
 
 
-    for(thirdIndex = 1; thirdIndex < thirdArray.length; thirdArray++){
-        if (output['min'] > thirdArray[thirdIndex]){
-            output['min'] = thirdArray[thirdIndex];
+    let outputObj ={
+        'min' : thirdArray[0],
+        'max' : thirdArray[0],
+        'mean': null
+    };
+
+    for(var arrayIndex=1; arrayIndex < thirdArray.length; arrayIndex++){
+
+        if( outputObj['min'] > thirdArray[arrayIndex] ){
+            outputObj['min'] = thirdArray[arrayIndex];
         }
 
-        if(outout['max'] < thirdArray[thirdIndex]){
-            output['max'] = thirdArray[thirdIndex];
+        if( outputObj['max'] < thirdArray[arrayIndex] ){
+            outputObj['max'] = thirdArray[arrayIndex];
         }
 
-        sum+=thirdArray[thirdIndex];
+        sum += thirdArray[arrayIndex];
     }
+    
+    outputObj['mean'] =sum/thirdArray.length;
 
-    output['mean'] =sum/thirdArray.length;
-
-    return output;
-
+    return outputObj;
+    
 }
+
+
 
 
 
 function findMode(){
 
 }
+
