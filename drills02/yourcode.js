@@ -23,8 +23,27 @@ function countOccurences(firstArray,searchWord){
     return count;
 }
 
-function wordLengths(){
 
+/*
+ Given an array of words, return an array of numbers repesenting the length of each word 
+ input: ['canary','silly','dog','a','mellow']
+ reutrn [6,5,3,1,6]
+
+
+ create an output array that stores the length of each word
+
+ use a for loop that goes through the array from start to finish 
+    for the current item in the array finsh the length using the length method
+    store the value in the ouput array
+
+ */
+
+function wordLengths(secondArray){
+    let countArray=[];
+    for(secondIndex = 0; secondIndex<secondArray.length; secondIndex++){
+        countArray.push(secondArray[secondIndex].length);
+    }
+    return countArray;
 }
 
 function getMinMaxMean(){
