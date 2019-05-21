@@ -15,7 +15,7 @@ go through the array from start to finish in a for loop
 
 function countOccurences(firstArray,searchWord){
     let count = 0;
-    for(firstIndex=0;firstIndex<firstArray.length;firstIndex++){
+    for(let firstIndex=0;firstIndex<firstArray.length;firstIndex++){
         if(firstArray[firstIndex] == searchWord){
             count++;
         }
@@ -40,16 +40,69 @@ function countOccurences(firstArray,searchWord){
 
 function wordLengths(secondArray){
     let countArray=[];
-    for(secondIndex = 0; secondIndex<secondArray.length; secondIndex++){
+    for(let secondIndex = 0; secondIndex<secondArray.length; secondIndex++){
         countArray.push(secondArray[secondIndex].length);
     }
     return countArray;
 }
 
-function getMinMaxMean(){
+/* 
+Given an array of numbers, get the minimum, maximum, and mean numbers. Return them as an object. Mean is another word for average 
+input [3,1,9,12,4]
+return {min: 1, max:12,mean:25.8}
 
+create an object that contains the min, max, and mean but are null values
+make the first value be the max and min 
+using a for loop go through the array from start to finish 
+    check to see if the current value is smaller than the current min
+        T then replace
+        F do nothing
+    check to see if the current value is greater than the current max
+        T then replace
+        F do nothing
+
+    create a sum and avg variable
+    find the sum by adding up the values in the array and take the sum and divide by the length of the array
+    
+*/
+
+
+
+function getMinMaxMean(thirdArray){
+
+    let sum = thirdArray[0];
+
+
+    let outputObj ={
+        'min' : thirdArray[0],
+        'max' : thirdArray[0],
+        'mean': null
+    };
+
+    for(var arrayIndex=1; arrayIndex < thirdArray.length; arrayIndex++){
+
+        if( outputObj['min'] > thirdArray[arrayIndex] ){
+            outputObj['min'] = thirdArray[arrayIndex];
+        }
+
+        if( outputObj['max'] < thirdArray[arrayIndex] ){
+            outputObj['max'] = thirdArray[arrayIndex];
+        }
+
+        sum += thirdArray[arrayIndex];
+    }
+    
+    outputObj['mean'] =sum/thirdArray.length;
+
+    return outputObj;
+    
 }
+
+
+
+
 
 function findMode(){
 
 }
+
