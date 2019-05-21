@@ -70,29 +70,31 @@ using a for loop go through the array from start to finish
 function getMinMaxMean(thirdArray){
     let sum = 0;
     let output = {
-        min: thirdArray[1],
-        max: thirdArray[1],
-        mean: 0
+        'min': thirdArray[0],
+        'max': thirdArray[0],
+        'mean': 0
     }
 
 
     for(thirdIndex = 1; thirdIndex < thirdArray.length; thirdArray++){
-        if (output[min]>thirdArray[thirdIndex]){
-            output[min] = thirdArray[thirdIndex];
+        if (output['min'] > thirdArray[thirdIndex]){
+            output['min'] = thirdArray[thirdIndex];
         }
 
-        if(outout[max]<thirdArray[thirdIndex]){
-            output[max] = thirdArray[thirdIndex];
+        if(outout['max'] < thirdArray[thirdIndex]){
+            output['max'] = thirdArray[thirdIndex];
         }
 
         sum+=thirdArray[thirdIndex];
     }
 
-    output[mean] =sum/thirdArray.length;
+    output['mean'] =sum/thirdArray.length;
 
     return output;
 
 }
+
+
 
 function findMode(){
 
