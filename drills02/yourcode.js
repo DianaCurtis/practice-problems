@@ -79,7 +79,7 @@ function getMinMaxMean(thirdArray){
         'mean': null
     };
 
-    for(var arrayIndex=1; arrayIndex < thirdArray.length; arrayIndex++){
+    for(let arrayIndex=1; arrayIndex < thirdArray.length; arrayIndex++){
 
         if( outputObj['min'] > thirdArray[arrayIndex] ){
             outputObj['min'] = thirdArray[arrayIndex];
@@ -102,7 +102,31 @@ function getMinMaxMean(thirdArray){
 
 
 
-function findMode(){
+function findMode(fourthArray){
+    let output = {};
+    let max = 0;
+    let maxNum = 0;
+    for(let arrayIndex = 0; arrayIndex < fourthArray.length; arrayIndex++){
+        if(output.hasOwnProperty(fourthArray[arrayIndex])){
+            output[fourthArray[arrayIndex]]+= 1;
+        }else{
+            output[fourthArray[arrayIndex]] = 1;
+        }
+    }
 
+    for (var key in output){
+        if(output[key]>max){
+            max=output[key];
+            maxNum=parseInt(key);
+        }else{
+            max=max;
+            maxNum=maxNum;
+        }
+    }
+    return maxNum;
 }
+
+
+
+
 
